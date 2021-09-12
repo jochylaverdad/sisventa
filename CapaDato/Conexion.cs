@@ -7,8 +7,8 @@ namespace CapaDato
 {
     class Conexion
     {
-        private static string dataSoure = "DESKTOP-07RQMUT";
-        private static string initialCatalog = "dbventas";
+        private static readonly string dataSoure = "DESKTOP-07RQMUT";
+        private static readonly string initialCatalog = "dbventas";
 
         public static string ConnectionString = $"Data Source={dataSoure};Initial Catalog={initialCatalog};Integrated Security=True";
 
@@ -30,12 +30,15 @@ namespace CapaDato
             {
                 if (sqlcon.State == ConnectionState.Open)
                 {
-                    MessageBox.Show($"Coneción a la Base de datos: {initialCatalog}, del servidor: {dataSoure}. Exitosa");
+                    respuesta = $"Coneción a la Base de datos: {initialCatalog}, del servidor: {dataSoure}. Exitosa.";
+                    sqlcon.Close();
                 }
                 else
                 {
-                    MessageBox.Show($"Coneción a la Base de datos: {initialCatalog}, del servidor: {dataSoure}. No se conecto por: {respuesta}");
+                    respuesta = $"Coneción a la Base de datos: {initialCatalog}, del servidor: {dataSoure}. No se conecto por: {respuesta}.";
                 }
+
+                MessageBox.Show(respuesta);
             }
         }
     }
