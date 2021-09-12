@@ -27,7 +27,7 @@ namespace CapaDato
 
         public DCategoria()
         {
-            Conexion.TestConection();
+            Connection.TestConection();
         }
 
         //metodo construtor lleno
@@ -51,7 +51,7 @@ namespace CapaDato
             try
             {
                 //codigo
-                SqlCon.ConnectionString = Conexion.ConnectionString;
+                SqlCon.ConnectionString = Connection.ConnectionString;
                 SqlCon.Open();
 
                 SqlCommand SqlCmd = new SqlCommand();
@@ -104,7 +104,7 @@ namespace CapaDato
             try
             {
                 //codigo
-                SqlCon.ConnectionString = Conexion.ConnectionString;
+                SqlCon.ConnectionString = Connection.ConnectionString;
                 SqlCon.Open();
 
                 SqlCommand SqlCmd = new SqlCommand();
@@ -158,7 +158,7 @@ namespace CapaDato
             try
             {
                 //codigo
-                SqlCon.ConnectionString = Conexion.ConnectionString;
+                SqlCon.ConnectionString = Connection.ConnectionString;
                 SqlCon.Open();
 
                 SqlCommand SqlCmd = new SqlCommand();
@@ -197,7 +197,7 @@ namespace CapaDato
             try
             {
                 //codigo
-                SqlCon.ConnectionString = Conexion.ConnectionString;
+                SqlCon.ConnectionString = Connection.ConnectionString;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.CommandText = "spmotrar_categoria";
@@ -224,7 +224,7 @@ namespace CapaDato
             try
             {
                 //codigo
-                SqlCon.ConnectionString = Conexion.ConnectionString;
+                SqlCon.ConnectionString = Connection.ConnectionString;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.CommandText = "spbuscar_categoria";
